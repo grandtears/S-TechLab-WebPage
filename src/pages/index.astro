@@ -1,13 +1,39 @@
-<!DOCTYPE html>
-<html lang="ja">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width">
-  <title>S-TechLab こーしきほーむぺーじ</title>
-</head>
-<body>
-  <h1 style="font-size: 3em; text-align: center; margin-top: 2em;">
-    こーしきほーむぺーじ。
+---
+import Layout from '../layouts/Layout.astro';
+import MemberProfile from '../components/MemberProfile'
+
+const members = [
+  {
+    name: 'ことはしろ',
+    icon: '/images/kotohaSiro.png',
+    links: {
+      x: 'https://x.com/kotohasiro',
+      note: 'https://note.com/kotoha_siro_page',
+    },
+  },
+  {
+    name: 'Sonoty',
+    icon: '/images/Sonoty.png',
+    links: {
+      x: 'https://x.com/SonotyHearts',
+      note: 'https://note.com/sonoty_hearts',
+      instagram: 'https://www.instagram.com/sonoty_vrc/',
+    },
+  },
+];
+---
+
+<Layout title="S-TechLab Official Website">
+  <h1 style="text-align: center; font-size: 3rem; font-weight: 800; margin-bottom: 2rem;">
+    S-TechLab
   </h1>
-</body>
-</html>
+  <p style="text-align: center; font-size: 1.2rem; margin-bottom: 4rem;">
+    S-TechLabは、ことはしろとSonotyの2人による創作サークルです。
+  </p>
+
+  <div class="members">
+    {members.map(member => (
+      <MemberProfile client:load member={member} />
+    ))}
+  </div>
+</Layout>
