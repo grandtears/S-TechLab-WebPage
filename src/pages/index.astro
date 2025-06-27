@@ -1,7 +1,8 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import MemberProfile from '../components/MemberProfile'
+import MemberProfile from '../components/MemberProfile.tsx';
 
+// --- membersデータにyoutubeのリンクを追加 ---
 const members = [
   {
     name: 'ことはしろ',
@@ -9,6 +10,7 @@ const members = [
     links: {
       x: 'https://x.com/kotohasiro',
       note: 'https://note.com/kotoha_siro_page',
+      youtube: 'https://www.youtube.com/@your-channel-kotohasiro', // ←ここにYouTubeのURL
     },
   },
   {
@@ -18,6 +20,7 @@ const members = [
       x: 'https://x.com/SonotyHearts',
       note: 'https://note.com/sonoty_hearts',
       instagram: 'https://www.instagram.com/sonoty_vrc/',
+      youtube: 'https://www.youtube.com/@your-channel-sonoty', // ←ここにYouTubeのURL
     },
   },
 ];
